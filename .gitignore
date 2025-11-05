@@ -1,6 +1,6 @@
 /myenv
 /__pycache__
-**/__pycache__
+/*/__pycache__
 /models
 /test_data
 .env
