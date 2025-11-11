@@ -5,3 +5,6 @@
 /test_data
 .env
 /venv
+stock_data.csv
+plots/
+agents/lstm_test.py

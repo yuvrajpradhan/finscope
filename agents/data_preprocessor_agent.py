@@ -16,6 +16,7 @@ class DataPreprocessorAgent:
         self.random_state = random_state
         self.seq_length = seq_length
         self.lstm_preprocessing = lstm_preprocessing
+        print("DataPreprocessorAgent initialized.")
 
     def shuffle_split(self, X, y):
         X_train_df, X_test_df, y_train_df, y_test_df = train_test_split(X, y, test_size=self.test_size, random_state=self.random_state, shuffle=True)
@@ -99,20 +100,36 @@ class DataPreprocessorAgent:
         else:
             X_train_df, X_test_df, y_train_df, y_test_df = self.shuffle_split(X, y)
 
+
         if numerical_cols:
             X_train_df, X_test_df = self.preprocess_numerical_input(X_train_df, X_test_df, numerical_cols)
         if categorical_cols:
             X_train_df, X_test_df = self.preprocess_categorical_input(X_train_df, X_test_df, categorical_cols)
-
+        
         if pd.api.types.is_numeric_dtype(y_train_df):
             y_train_df, y_test_df = self.preprocess_numerical_output(y_train_df, y_test_df)
         else:
             y_train_df, y_test_df = self.preprocess_categorical_output(y_train_df, y_test_df)
 
+        if self.lstm_preprocessing:
+            X_train_seq, y_train_seq = self.create_sequences(X_train_df, y_train_df)
+            X_test_seq, y_test_seq = self.create_sequences(X_test_df, y_test_df)
+        else:
+            X_train_seq, y_train_seq = X_train_df.values, y_train_df.values
+            X_test_seq, y_test_seq = X_test_df.values, y_test_df.values
+
+        X_train_seq = X_train_seq.astype('float32')
+        X_test_seq  = X_test_seq.astype('float32')
+        y_train_seq = y_train_seq.astype('float32')
+        y_test_seq  = y_test_seq.astype('float32')
+
         processed_data = {
-            'X_train': X_train_df.values,
-            'X_test': X_test_df.values,
-            'y_train': y_train_df.values,
-            'y_test': y_test_df.values
+            'X_train': X_train_seq,
+            'X_test': X_test_seq,
+            'y_train': y_train_seq,
+            'y_test': y_test_seq,
+            'input_scaler': self.scaler,
+            'target_scaler': self.target_scaler
         }
+
         return processed_data

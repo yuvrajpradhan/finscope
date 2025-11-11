@@ -7,6 +7,7 @@ load_dotenv()
 # --- API Keys ---
 API_KEY_GEMINI = os.getenv("API_KEY_GEMINI")
 API_KEY_NEWS = os.getenv("API_KEY_NEWS")
+API_KEY_AV = os.getenv("API_KEY_AV")
 
 # --- Stock Settings ---
 TICKER = os.getenv("TICKER", "AAPL")
@@ -22,6 +23,7 @@ ENABLE_TRAINING = os.getenv("ENABLE_TRAINING", "True").lower() in ("true", "1", 
 if __name__ == "__main__":
     print("API_KEY_GEMINI:", bool(API_KEY_GEMINI))
     print("API_KEY_NEWS:", bool(API_KEY_NEWS))
+    print("API_KEY_AV:", bool(API_KEY_AV))
     print("TICKER:", TICKER)
     print("LSTM_MODEL_PATH:", LSTM_MODEL_PATH)
     print("ENABLE_TRAINING:", ENABLE_TRAINING)
