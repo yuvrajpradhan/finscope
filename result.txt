@@ -1,0 +1,544 @@
+===================================
+     FinScope AI Prediction (Without Sentiment Analysis)
+===================================
+Ticker: NVDA
+Date Range: 2025-10-28 → 2025-11-12
+===================================
+
+DataFetcherAgent initialized successfully.
+LLMAgent initialized with model: gemini-2.5-flash
+LSTMAgent initialized.
+
+Starting FinScope workflow for NVDA...
+
+Fetching stock data for NVDA (2025-10-28 -> 2025-11-12) using Alpha Vantage...
+Stock data fetched successfully from Alpha Vantage.
+Stock data saved to stock_data.csv
+
+Fetching news for 'NVDA'...
+Found 50 financial news articles.
+Skipping sentiment feature.
+               Open      High      Low   Close  Sentiment
+2025-10-28  193.050  203.1500  191.910  201.03        0.0
+2025-10-29  207.980  212.1899  204.775  207.04        0.0
+2025-10-30  205.150  206.1600  201.410  202.89        0.0
+2025-10-31  206.450  207.9700  202.070  202.49        0.0
+2025-11-03  208.080  211.3350  205.560  206.88        0.0
+2025-11-04  203.000  203.9699  197.930  198.69        0.0
+2025-11-05  198.770  202.9200  194.650  195.21        0.0
+2025-11-06  196.420  197.6200  186.380  188.08        0.0
+2025-11-07  184.900  188.3200  178.910  188.15        0.0
+2025-11-10  195.110  199.9400  193.790  199.05        0.0
+2025-11-11  195.155  195.4200  191.300  193.16        0.0
+Model file not found.
+Training fresh LSTM model...
+Training LSTM model...
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1762923427.048713  421021 cuda_executor.cc:1309] INTERNAL: CUDA Runtime error: Failed call to cudaGetRuntimeVersion: Error loading CUDA libraries. GPU will not be used.: Error loading CUDA libraries. GPU will not be used.
+W0000 00:00:1762923427.065888  421021 gpu_device.cc:2342] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+/media/anubhaw/Anubhaw/Projects/FinScope/myenv/lib/python3.12/site-packages/keras/src/layers/rnn/rnn.py:199: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(**kwargs)
+LSTM model built.
+Epoch 1/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 4s 13ms/step - loss: 0.1295
+Epoch 2/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 13ms/step - loss: 0.0741
+Epoch 3/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 14ms/step - loss: 0.0533
+Epoch 4/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 23ms/step - loss: 0.0681 
+Epoch 5/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 21ms/step - loss: 0.0754
+Epoch 6/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 20ms/step - loss: 0.0641
+Epoch 7/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 18ms/step - loss: 0.0549
+Epoch 8/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 18ms/step - loss: 0.0706
+Epoch 9/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 20ms/step - loss: 0.0669
+Epoch 10/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - loss: 0.0609
+Epoch 11/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 28ms/step - loss: 0.0612
+Epoch 12/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 31ms/step - loss: 0.0592
+Epoch 13/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - loss: 0.0586 
+Epoch 14/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 19ms/step - loss: 0.0630
+Epoch 15/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 23ms/step - loss: 0.0543
+Epoch 16/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 28ms/step - loss: 0.0644
+Epoch 17/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 20ms/step - loss: 0.0650
+Epoch 18/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 23ms/step - loss: 0.0598    
+Epoch 19/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 28ms/step - loss: 0.0570
+Epoch 20/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 22ms/step - loss: 0.0554
+Epoch 21/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 23ms/step - loss: 0.0537
+Epoch 22/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 25ms/step - loss: 0.0734
+Epoch 23/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 20ms/step - loss: 0.0600
+Epoch 24/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 25ms/step - loss: 0.0641
+Epoch 25/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 29ms/step - loss: 0.0462
+Epoch 26/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 27ms/step - loss: 0.0754
+Epoch 27/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - loss: 0.0552
+Epoch 28/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 19ms/step - loss: 0.0671
+Epoch 29/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 21ms/step - loss: 0.0612
+Epoch 30/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 28ms/step - loss: 0.0511
+Epoch 31/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 29ms/step - loss: 0.0642
+Epoch 32/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 26ms/step - loss: 0.0478    
+Epoch 33/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 28ms/step - loss: 0.0523
+Epoch 34/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 19ms/step - loss: 0.0667
+Epoch 35/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 23ms/step - loss: 0.0587
+Epoch 36/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 23ms/step - loss: 0.0471
+Epoch 37/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 26ms/step - loss: 0.0462
+Epoch 38/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 28ms/step - loss: 0.0509
+Epoch 39/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 28ms/step - loss: 0.0437
+Epoch 40/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 21ms/step - loss: 0.0492
+Epoch 41/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - loss: 0.0464    
+Epoch 42/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 22ms/step - loss: 0.0408
+Epoch 43/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 28ms/step - loss: 0.0331
+Epoch 44/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 29ms/step - loss: 0.0337
+Epoch 45/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 19ms/step - loss: 0.0739
+Epoch 46/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 19ms/step - loss: 0.0595
+Epoch 47/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 22ms/step - loss: 0.0588
+Epoch 48/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 25ms/step - loss: 0.0501
+Epoch 49/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 21ms/step - loss: 0.0561
+Epoch 50/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 25ms/step - loss: 0.0373    
+Epoch 51/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 27ms/step - loss: 0.0318
+Epoch 52/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - loss: 0.0436
+Epoch 53/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 25ms/step - loss: 0.0538
+Epoch 54/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - loss: 0.0359
+Epoch 55/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 23ms/step - loss: 0.0330
+Epoch 56/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 23ms/step - loss: 0.0398    
+Epoch 57/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - loss: 0.0457
+Epoch 58/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 21ms/step - loss: 0.0338
+Epoch 59/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 28ms/step - loss: 0.0453
+Epoch 60/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 29ms/step - loss: 0.0425
+Epoch 61/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - loss: 0.0304
+Epoch 62/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 19ms/step - loss: 0.0425
+Epoch 63/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 27ms/step - loss: 0.0379
+Epoch 64/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 22ms/step - loss: 0.0548
+Epoch 65/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 20ms/step - loss: 0.0452
+Epoch 66/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 19ms/step - loss: 0.0244
+Epoch 67/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 20ms/step - loss: 0.0388    
+Epoch 68/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 19ms/step - loss: 0.0368
+Epoch 69/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 20ms/step - loss: 0.0361
+Epoch 70/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 23ms/step - loss: 0.0370
+Epoch 71/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 28ms/step - loss: 0.0316
+Epoch 72/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 26ms/step - loss: 0.0444
+Epoch 73/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 26ms/step - loss: 0.0328
+Epoch 74/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 23ms/step - loss: 0.0445
+Epoch 75/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 25ms/step - loss: 0.0402
+Epoch 76/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 22ms/step - loss: 0.0333
+Epoch 77/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 23ms/step - loss: 0.0333
+Epoch 78/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 23ms/step - loss: 0.0304
+Epoch 79/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 25ms/step - loss: 0.0375    
+Epoch 80/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 23ms/step - loss: 0.0514
+Epoch 81/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - loss: 0.0465
+Epoch 82/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 25ms/step - loss: 0.0377
+Epoch 83/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - loss: 0.0240
+Epoch 84/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 25ms/step - loss: 0.0282    
+Epoch 85/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 22ms/step - loss: 0.0329
+Epoch 86/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 23ms/step - loss: 0.0267
+Epoch 87/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - loss: 0.0438
+Epoch 88/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - loss: 0.0347    
+Epoch 89/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - loss: 0.0276    
+Epoch 90/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 27ms/step - loss: 0.0514
+Epoch 91/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 22ms/step - loss: 0.0252
+Epoch 92/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 29ms/step - loss: 0.0346
+Epoch 93/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 23ms/step - loss: 0.0334
+Epoch 94/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 28ms/step - loss: 0.0334
+Epoch 95/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 21ms/step - loss: 0.0332    
+Epoch 96/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 21ms/step - loss: 0.0310
+Epoch 97/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 26ms/step - loss: 0.0278
+Epoch 98/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 21ms/step - loss: 0.0364
+Epoch 99/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 23ms/step - loss: 0.0280
+Epoch 100/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - loss: 0.0288
+Model saved to models/NVDA_model.keras
+Scaler saved to models/NVDA_scaler.pkl
+
+Evaluating model...
+
+Evaluation Results:
+MAE: 3.1856
+MSE: 10.9812
+RMSE: 3.3138
+MAPE: 1.66%
+R2 Score: 0.4590
+
+Saving visualizations to /plots directory...
+6 plots saved.
+
+Evaluation Metrics:
+MAE: 3.1856
+MSE: 10.9812
+RMSE: 3.3138
+MAPE: 1.66%
+R2 Score: 0.4590
+Predicting next closing price...
+
+Predicted next Close for NVDA: 196.05
+
+===================================
+Predicted Stock Price for NVDA: $196.05
+===================================
+
+
+
+
+
+===================================
+     FinScope AI Prediction (With Sentiment Analysis)
+===================================
+Ticker: NVDA
+Date Range: 2025-10-28 → 2025-11-12
+===================================
+
+DataFetcherAgent initialized successfully.
+LLMAgent initialized with model: gemini-2.5-flash
+LSTMAgent initialized.
+
+Starting FinScope workflow for NVDA...
+Stock data saved to stock_data.csv
+
+Fetching news for 'NVDA'...
+Found 50 financial news articles.
+{'2025-11-05': 0.12, '2025-11-06': -0.15, '2025-11-07': -0.69, '2025-11-08': 0.06, '2025-11-09': -0.65, '2025-11-10': 0.47}
+               Open      High      Low   Close  Sentiment
+2025-10-28  193.050  203.1500  191.910  201.03       0.00
+2025-10-29  207.980  212.1899  204.775  207.04       0.00
+2025-10-30  205.150  206.1600  201.410  202.89       0.00
+2025-10-31  206.450  207.9700  202.070  202.49       0.00
+2025-11-03  208.080  211.3350  205.560  206.88       0.00
+2025-11-04  203.000  203.9699  197.930  198.69       0.00
+2025-11-05  198.770  202.9200  194.650  195.21       0.12
+2025-11-06  196.420  197.6200  186.380  188.08      -0.15
+2025-11-07  184.900  188.3200  178.910  188.15      -0.69
+2025-11-10  195.110  199.9400  193.790  199.05       0.47
+2025-11-11  195.155  195.4200  191.300  193.16       0.00
+Loading model...
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1762923562.627636  423859 cuda_executor.cc:1309] INTERNAL: CUDA Runtime error: Failed call to cudaGetRuntimeVersion: Error loading CUDA libraries. GPU will not be used.: Error loading CUDA libraries. GPU will not be used.
+W0000 00:00:1762923562.645496  423859 gpu_device.cc:2342] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+Loading scaler...
+Error: scaler.pkl not found.
+Training fresh LSTM model...
+Training LSTM model...
+/media/anubhaw/Anubhaw/Projects/FinScope/myenv/lib/python3.12/site-packages/keras/src/layers/rnn/rnn.py:199: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(**kwargs)
+LSTM model built.
+Epoch 1/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 4s 24ms/step - loss: 0.1172   
+Epoch 2/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - loss: 0.0538
+Epoch 3/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 18ms/step - loss: 0.0995
+Epoch 4/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 18ms/step - loss: 0.0870
+Epoch 5/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 19ms/step - loss: 0.0612
+Epoch 6/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 18ms/step - loss: 0.0611
+Epoch 7/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 21ms/step - loss: 0.0568
+Epoch 8/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 19ms/step - loss: 0.0732
+Epoch 9/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 18ms/step - loss: 0.0583
+Epoch 10/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 19ms/step - loss: 0.0597
+Epoch 11/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 20ms/step - loss: 0.0409
+Epoch 12/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - loss: 0.0642
+Epoch 13/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 23ms/step - loss: 0.0587
+Epoch 14/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 23ms/step - loss: 0.0624
+Epoch 15/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 17ms/step - loss: 0.0662
+Epoch 16/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 27ms/step - loss: 0.0672
+Epoch 17/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 28ms/step - loss: 0.0538
+Epoch 18/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 19ms/step - loss: 0.0511
+Epoch 19/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 30ms/step - loss: 0.0609
+Epoch 20/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 30ms/step - loss: 0.0518
+Epoch 21/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 16ms/step - loss: 0.0523    
+Epoch 22/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 16ms/step - loss: 0.0594    
+Epoch 23/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 17ms/step - loss: 0.0820
+Epoch 24/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 18ms/step - loss: 0.0672
+Epoch 25/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 31ms/step - loss: 0.0520
+Epoch 26/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 27ms/step - loss: 0.0570
+Epoch 27/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 26ms/step - loss: 0.0588
+Epoch 28/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - loss: 0.0514
+Epoch 29/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - loss: 0.0627
+Epoch 30/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - loss: 0.0619
+Epoch 31/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 22ms/step - loss: 0.0504
+Epoch 32/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 23ms/step - loss: 0.0636
+Epoch 33/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 22ms/step - loss: 0.0525
+Epoch 34/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 22ms/step - loss: 0.0630
+Epoch 35/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 22ms/step - loss: 0.0519
+Epoch 36/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 27ms/step - loss: 0.0480
+Epoch 37/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 26ms/step - loss: 0.0625
+Epoch 38/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 16ms/step - loss: 0.0574
+Epoch 39/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 16ms/step - loss: 0.0522
+Epoch 40/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 15ms/step - loss: 0.0446
+Epoch 41/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 15ms/step - loss: 0.0546
+Epoch 42/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 17ms/step - loss: 0.0614
+Epoch 43/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 35ms/step - loss: 0.0406
+Epoch 44/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 25ms/step - loss: 0.0449
+Epoch 45/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 23ms/step - loss: 0.0589    
+Epoch 46/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 22ms/step - loss: 0.0443
+Epoch 47/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 45ms/step - loss: 0.0510
+Epoch 48/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 28ms/step - loss: 0.0500
+Epoch 49/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 15ms/step - loss: 0.0356
+Epoch 50/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 15ms/step - loss: 0.0421    
+Epoch 51/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 16ms/step - loss: 0.0483
+Epoch 52/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 16ms/step - loss: 0.0376
+Epoch 53/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 18ms/step - loss: 0.0339
+Epoch 54/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 20ms/step - loss: 0.0284
+Epoch 55/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 27ms/step - loss: 0.0339
+Epoch 56/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - loss: 0.0402
+Epoch 57/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 18ms/step - loss: 0.0374
+Epoch 58/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 18ms/step - loss: 0.0349
+Epoch 59/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 18ms/step - loss: 0.0491
+Epoch 60/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 20ms/step - loss: 0.0310
+Epoch 61/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 31ms/step - loss: 0.0519    
+Epoch 62/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 45ms/step - loss: 0.0320     
+Epoch 63/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 22ms/step - loss: 0.0368
+Epoch 64/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 28ms/step - loss: 0.0360
+Epoch 65/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 32ms/step - loss: 0.0610
+Epoch 66/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 27ms/step - loss: 0.0279     
+Epoch 67/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 33ms/step - loss: 0.0649 
+Epoch 68/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 26ms/step - loss: 0.0471
+Epoch 69/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 34ms/step - loss: 0.0299 
+Epoch 70/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 43ms/step - loss: 0.0400
+Epoch 71/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 44ms/step - loss: 0.0427
+Epoch 72/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 16ms/step - loss: 0.0369
+Epoch 73/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 16ms/step - loss: 0.0382
+Epoch 74/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 15ms/step - loss: 0.0507
+Epoch 75/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 15ms/step - loss: 0.0455
+Epoch 76/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 15ms/step - loss: 0.0347
+Epoch 77/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 20ms/step - loss: 0.0299
+Epoch 78/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 33ms/step - loss: 0.0393
+Epoch 79/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 23ms/step - loss: 0.0261
+Epoch 80/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 22ms/step - loss: 0.0379
+Epoch 81/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 28ms/step - loss: 0.0378
+Epoch 82/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 36ms/step - loss: 0.0324
+Epoch 83/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 31ms/step - loss: 0.0259 
+Epoch 84/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 26ms/step - loss: 0.0419    
+Epoch 85/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 27ms/step - loss: 0.0353
+Epoch 86/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 27ms/step - loss: 0.0219    
+Epoch 87/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 26ms/step - loss: 0.0300    
+Epoch 88/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 26ms/step - loss: 0.0370
+Epoch 89/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 41ms/step - loss: 0.0329
+Epoch 90/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 15ms/step - loss: 0.0355
+Epoch 91/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 33ms/step - loss: 0.0236 
+Epoch 92/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 26ms/step - loss: 0.0243
+Epoch 93/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 26ms/step - loss: 0.0320    
+Epoch 94/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 30ms/step - loss: 0.0368
+Epoch 95/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - loss: 0.0288
+Epoch 96/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - loss: 0.0449
+Epoch 97/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - loss: 0.0226
+Epoch 98/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 23ms/step - loss: 0.0261
+Epoch 99/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 20ms/step - loss: 0.0277
+Epoch 100/100
+4/4 ━━━━━━━━━━━━━━━━━━━━ 0s 21ms/step - loss: 0.0260
+Model saved to models/NVDA_model.keras
+Scaler saved to models/NVDA_scaler.pkl
+
+Evaluating model...
+
+Evaluation Results:
+MAE: 2.7631
+MSE: 9.1673
+RMSE: 3.0277
+MAPE: 1.43%
+R2 Score: 0.5483
+
+Saving visualizations to /plots directory...
+6 plots saved.
+
+Evaluation Metrics:
+MAE: 2.7631
+MSE: 9.1673
+RMSE: 3.0277
+MAPE: 1.43%
+R2 Score: 0.5483
+Predicting next closing price...
+
+Predicted next Close for NVDA: 197.37
+
+===================================
+Predicted Stock Price for NVDA: $197.37
+===================================

@@ -209,13 +209,14 @@ class DataFetcherAgent:
         start_date = start_date or config.START_DATE
         end_date = end_date or config.END_DATE
 
-        stock_data = self.fetch_stock_data(ticker, start_date, end_date)
+        # stock_data = self.fetch_stock_data(ticker, start_date, end_date)
+        stock_data = pd.read_csv("stock_data.csv", index_col=0, parse_dates=True)
 
         if stock_data is not None:
             stock_data.to_csv("stock_data.csv")
             print("Stock data saved to stock_data.csv")
 
-        news_data = self.fetch_news_data(ticker, max_articles=10)
+        news_data = self.fetch_news_data(ticker, max_articles=50)
         # print(news_data)
 
         # news_data = []

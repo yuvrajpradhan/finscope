@@ -17,7 +17,7 @@ TICKER = os.getenv("TICKER", "AAPL")
 end_date_obj = datetime.now()
 END_DATE = end_date_obj.strftime('%Y-%m-%d')
 
-start_date_obj = end_date_obj - timedelta(days=364)
+start_date_obj = end_date_obj - timedelta(days=10)
 START_DATE = start_date_obj.strftime('%Y-%m-%d')
 # --------------------------------------------------
 

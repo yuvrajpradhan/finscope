@@ -60,20 +60,23 @@ class LLMAgent:
 
         OUTPUT FORMAT:
         Respond STRICTLY in JSON. The output must be a single dictionary where keys are the dates (YYYY-MM-DD) and values are the calculated net sentiment scores (float, e.g., 0.45).
-        DO NOT include any explanation or extra text.
+        DO NOT include any explanation or extra text. Your response must start with '{' and end with '}' and contain nothing else.
         """
 
         payload = {
-            "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"responseMimeType": "application/json"}
+            "contents": [{"parts": [{"text": prompt}]}]
+            # "generationConfig": {"responseMimeType": "application/json"}
         }
         
         try:
-            response = requests.post(self.url, json=payload, timeout=45) 
+            response = requests.post(self.url, json=payload, timeout=120) 
             data = response.json()
             
             # Extract and parse the JSON response text
             json_text = data["candidates"][0]["content"]["parts"][0]["text"]
+
+            if json_text.startswith("```json"):
+                json_text = json_text.replace("```json", "").replace("```", "").strip()
             
             # The output is directly the dictionary you wanted!
             return json.loads(json_text) 

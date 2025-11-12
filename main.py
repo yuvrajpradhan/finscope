@@ -17,7 +17,7 @@ def run():
     print("===================================\n")
 
     # --- Initialize Master Agent ---
-    master_agent = MasterAgent(use_sentiment=True)
+    master_agent = MasterAgent(seq_len=3, use_sentiment=True)
 
     # --- Run Full Workflow ---
     try:

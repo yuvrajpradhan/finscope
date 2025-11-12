@@ -71,7 +71,7 @@ class LSTMAgent:
         
         self.build_model((X_train.shape[1], X_train.shape[2])) 
 
-        self.model.fit(X_train, y_train, epochs=50, batch_size=32, verbose=1)
+        self.model.fit(X_train, y_train, epochs=100, batch_size=1, verbose=1)
 
         os.makedirs(os.path.dirname(self.model_path), exist_ok=True)
         self.model.save(self.model_path)
