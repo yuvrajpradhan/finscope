@@ -4,3 +4,4 @@
 /models
 /test_data
 .env
+/venv
